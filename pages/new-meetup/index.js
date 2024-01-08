@@ -2,11 +2,13 @@
 import { useRouter } from 'next/router';
 import { Fragment } from 'react'; 
 import Head from 'next/head';
+import withLanguageDetection from '../../hoc/withLanguageDetection';
 
 import NewMeetupForm from '../../components/meetups/NewMeetupForm';
 
 function NewMeetupPage() {
   const router = useRouter();
+  //const language = router.query.lang || 'en'; // Get language from query parameter
 
   async function addMeetupHandler(enteredMeetupData) {
     const response = await fetch('/api/new-meetup', {
@@ -19,7 +21,7 @@ function NewMeetupPage() {
 
     const data = await response.json();
 
-    console.log(data);
+    // console.log(data);
 
     router.push('/');
   }
@@ -33,9 +35,9 @@ function NewMeetupPage() {
       content='Add your own meetups and create amazing networking opportunities.'
     />
   </Head>
-  <NewMeetupForm onAddMeetup={addMeetupHandler} />
+  <NewMeetupForm onAddMeetup={addMeetupHandler}  />
 </Fragment>
   );
 }
 
-export default NewMeetupPage;
+export default(NewMeetupPage);

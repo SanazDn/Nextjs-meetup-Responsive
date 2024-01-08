@@ -9,6 +9,7 @@
   overflow: hidden;
   border-top-right-radius: 6px;
   border-top-left-radius: 6px;
+  /* margin-bottom: 4px;  */
 } 
 
 .image img {
@@ -17,11 +18,12 @@
 } 
 
 /* Mobile-specific styles */
-@media (max-width: 767px) {
+@media (max-width: 1226px) {
   .image {
     height: 12rem; /* Adjust the height for mobile as needed */
   }
 }
+
 
 .content {
   text-align: center;
